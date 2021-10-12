@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddOrEditContact">
+
+    <EditText
+        android:id="@+id/txtContactName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="联系人名称"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <EditText
+        android:id="@+id/txtUrPubKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="己方RSA公钥"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/btnGenRSAKey"
+        app:layout_constraintStart_toStartOf="@+id/txtContactName"
+        app:layout_constraintTop_toBottomOf="@+id/txtContactName" />
+
+    <Button
+        android:id="@+id/btnCopyUrPubKey"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="复制己方公钥"
+        android:textSize="10sp"
+        app:backgroundTint="#C2185B"
+        app:layout_constraintBottom_toBottomOf="@+id/txtUrPubKey"
+        app:layout_constraintEnd_toEndOf="@+id/txtUrPubKey"
+        app:layout_constraintTop_toTopOf="@+id/txtUrPubKey" />
+
+    <EditText
+        android:id="@+id/txtUrPriKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="己方RSA私钥"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/btnGenRSAKey"
+        app:layout_constraintStart_toStartOf="@+id/txtUrPubKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrPubKey" />
+
+    <Button
+        android:id="@+id/btnGenRSAKey"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="生成密钥对"
+        app:backgroundTint="#1976D2"
+        app:layout_constraintBottom_toBottomOf="@+id/txtUrPriKey"
+        app:layout_constraintEnd_toEndOf="@+id/txtContactName"
+        app:layout_constraintTop_toTopOf="@+id/txtUrPubKey" />
+
+    <EditText
+        android:id="@+id/txtOppRubKey"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="对方RSA公钥"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtUrPriKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrPriKey" />
+
+    <Button
+        android:id="@+id/btnPasteOppPubKey"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="粘贴对方公钥"
+        android:textSize="10sp"
+        app:backgroundTint="#689F38"
+        app:layout_constraintBottom_toBottomOf="@+id/txtOppRubKey"
+        app:layout_constraintEnd_toEndOf="@+id/txtOppRubKey"
+        app:layout_constraintTop_toTopOf="@+id/txtOppRubKey" />
+
+    <Button
+        android:id="@+id/btnSaveContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="保存"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintEnd_toEndOf="@+id/txtOppRubKey"
+        app:layout_constraintStart_toEndOf="@+id/btnPurge"
+        app:layout_constraintTop_toBottomOf="@+id/txtOppRubKey" />
+
+    <Button
+        android:id="@+id/btnPurge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="重置"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintStart_toStartOf="@+id/txtOppRubKey"
+        app:layout_constraintTop_toBottomOf="@+id/txtOppRubKey" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="添加/编辑 联系人"
+        android:textColor="#2392EC"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="提示：如您想要添加一个完全自用的密钥，先点击”生成密钥对“，然后点击”复制己方公钥“，再点击”粘贴对方公钥“，然后点击”生成密钥对“并填写”联系人名称“，最后点击”保存“即可"
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="@+id/txtOppRubKey"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtOppRubKey"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveContact" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

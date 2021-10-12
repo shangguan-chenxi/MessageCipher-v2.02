@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnGenKeys" type="id" />
+    <item name="btnClearAesPwdTxt" type="id" />
+    <item name="txtAESPwd" type="id" />
+    <item name="txtPublicKey" type="id" />
+    <item name="btnClearPublicKeyTxt" type="id" />
+    <item name="btnPublicKeyEncrypt" type="id" />
+    <item name="btnPublicKeyDecrypt" type="id" />
+    <item name="btnCopyPublicKey" type="id" />
+    <item name="btnPastePublicKey" type="id" />
+    <item name="txtPrivateKey" type="id" />
+    <item name="btnClearPrivateKeyTxt" type="id" />
+    <item name="btnPrivateKeyEncrypt" type="id" />
+    <item name="btnPrivateKeyDecrypt" type="id" />
+    <item name="btnCopyPrivateKey" type="id" />
+    <item name="btnPastePrivateKey" type="id" />
+    <item name="txtSignature" type="id" />
+    <item name="btnClearSignatureTxt" type="id" />
+    <item name="btnGenSignature" type="id" />
+    <item name="btnVerifySignature" type="id" />
+    <item name="btnPasteSignature" type="id" />
+    <item name="txtEncryptedTxt" type="id" />
+    <item name="btnClearEncryptedTxt" type="id" />
+    <item name="btnCopyEncryptedTxt" type="id" />
+    <item name="btnPasteEncryptedTxt" type="id" />
+    <item name="btnPurgeAll" type="id" />
+    <item name="btnGoToAES" type="id" />
+    <item name="btnGenRandAesPwd" type="id" />
+</resources>

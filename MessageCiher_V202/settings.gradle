@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "MessageCiher_V2.02"

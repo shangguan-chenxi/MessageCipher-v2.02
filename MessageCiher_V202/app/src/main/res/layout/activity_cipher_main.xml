@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CipherMain">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="联系人"
+        android:textColor="#2392EC"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtWho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="联系人名称"
+        app:layout_constraintEnd_toEndOf="@+id/textView1"
+        app:layout_constraintStart_toStartOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <EditText
+        android:id="@+id/txtAesPlainText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="明文"
+        android:inputType="textMultiLine|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnAesEncryptAndCopy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWho"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnClearAesPlainText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:text="X"
+        android:textSize="12sp"
+        app:backgroundTint="#FFC0CB"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAesPlainText"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesPlainText" />
+
+    <TextView
+        android:id="@+id/txtPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAesEncryptAndCopy"
+        app:layout_constraintEnd_toStartOf="@+id/btnAesEncryptAndCopy"
+        app:layout_constraintStart_toStartOf="@+id/txtAesPlainText"
+        app:layout_constraintTop_toTopOf="@+id/btnAesEncryptAndCopy" />
+
+    <Button
+        android:id="@+id/btnAesEncryptAndCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="加密+复制"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintBottom_toTopOf="@+id/txtAesCryptedText"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesCryptedText" />
+
+    <EditText
+        android:id="@+id/txtAesCryptedText"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="密文"
+        android:inputType="textMultiLine|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnPurge"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesPlainText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtAesPlainText" />
+
+    <Button
+        android:id="@+id/btnClearAesCryptedText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        android:textSize="12sp"
+        app:backgroundTint="#FFC0CB"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesCryptedText"
+        app:layout_constraintTop_toTopOf="@+id/txtAesCryptedText" />
+
+    <Button
+        android:id="@+id/btnAesDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="解密"
+        android:textSize="12sp"
+        app:backgroundTint="#303F9F"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPasteAndDecrypt"
+        app:layout_constraintEnd_toStartOf="@+id/btnPasteAndDecrypt" />
+
+    <Button
+        android:id="@+id/btnPasteAndDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="粘贴+解密"
+        android:textSize="12sp"
+        app:backgroundTint="#303F9F"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAesCryptedText"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesCryptedText" />
+
+    <Button
+        android:id="@+id/btnPurge"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="清空"
+        android:textSize="12sp"
+        app:backgroundTint="#2392EC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtAesCryptedText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnExit" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="退出程序"
+        android:textSize="12sp"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtAesCryptedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
